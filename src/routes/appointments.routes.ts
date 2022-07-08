@@ -22,7 +22,7 @@ appointmentsRouter.get('/', async(request, response) => {
 })
 
 appointmentsRouter.post('/', async (request, response) => {
-   try {
+
       // const { provider, date } = request.body
       const { provider_id, date } = request.body;
 
@@ -36,10 +36,7 @@ appointmentsRouter.post('/', async (request, response) => {
          provider_id })
 
       return response.json(appointment);
-   } catch (err) {
-      // @ts-ignore
-      return response.status(400).json({ error: err.message });
-   }
+
 });
 
 export default appointmentsRouter;
